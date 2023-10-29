@@ -15,5 +15,11 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/login")
+    public String login( Model model){
+        log.debug("debug log={}", "로그인 호출");
+        return "login";
+    }
+
 
 }
