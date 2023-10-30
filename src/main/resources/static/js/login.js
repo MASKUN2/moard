@@ -12,8 +12,8 @@ let main = {
     login : function (){
         //데이터 지정
         let data = {
-            user_id : $('#user_id').val(), //val()은 값으로 만드는 함수
-            user_password : $('#user_password').val()
+            account_id : $('#account_id').val(), //val()은 값으로 만드는 함수
+            account_pw : $('#account_pw').val()
         };
         //ajax로 요청, ()안에 옵션 헤더의 집합
         $.ajax({
@@ -26,9 +26,13 @@ let main = {
                 // 성공여부에따라 실행되는 콜백 함수
                 let message = response.message;
                 alert(message);
+                window.location.href = '/'; //성공하면 인덱스페이지로 이동
+
             },
             error: function(error) {
-                alert(error);
+            let message = error.responseJSON.message; // error는 바로 .message 필드로 접근이 불가능하기 때문에 .responseJSON으로 전처리해야한다.
+                    console.log(error);
+                    alert(message);
             }
         });
     }

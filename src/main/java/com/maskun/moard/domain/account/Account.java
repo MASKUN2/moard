@@ -6,12 +6,8 @@ import lombok.Getter;
 @Getter
 public class Account {
 
-    private final String accountId;
-    private final String accountPw;
+    private String accountId;
+    private String accountPw;
 
-    public Account(LoginDto loginDto){
-        this.accountId = loginDto.getUserId();
-        this.accountPw = loginDto.getUserPassword();
-    }
 
 }
