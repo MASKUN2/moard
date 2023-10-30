@@ -27,9 +27,9 @@ public class AccountService {
             //로그인실패 (false) 리턴
             return false;
         }
-        //성공했다면 로그인 성공한 아이디를 세션에 loggedInId로 담고 true를 리턴
+        //성공했다면 로그인 성공한 아이디를 세션에 sessionAccountId로 담고 true를 리턴
         String loginSuccessId = queryResult;
-        session.setAttribute("loggedInId", loginSuccessId);
+        session.setAttribute("sessionAccountId", loginSuccessId);
         return true;
     }
 }

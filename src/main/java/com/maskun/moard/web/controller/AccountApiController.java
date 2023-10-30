@@ -33,7 +33,7 @@ public class AccountApiController {
             //성공하면 ok(200)http 코드와 메세지를 보냄
             responseEntity = ResponseEntity.ok(Collections.singletonMap("message", "로그인완료"));
             //Service에서 수행한 세션 addAttribute logging
-            log.info("info log = session loggedInId = {}", session.getAttribute("loggedInId"));
+            log.info("info log = session loggedInId = {}", session.getAttribute("sessionAccountId"));
         }else{
             //만약 실패하면 401 http code 전송
             responseEntity = ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("message", "로그인정보가 일치하지 않습니다."));
