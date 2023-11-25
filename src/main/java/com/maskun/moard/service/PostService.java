@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class PostService {
     private final PostJpaRepository repository;
+
+    /** DB에 post를 저장한다.
+     * @param dto 가 null 이면 예외가 발생하므로 유효성 검사를 한다.
+     * @return 저장된 Entity의 Id를 반환한다.
+     * */
     @Transactional
     public Long savePost(PostSaveDto dto){
         Post postSaved;
